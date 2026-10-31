@@ -21,7 +21,15 @@
     "incremental": true,
     "skipLibCheck": true,
     "strict": true,
-    "strictPropertyInitialization": false
+    "strictPropertyInitialization": false,
+    "paths": {
+      "@app/contracts": [
+        "./libs/contracts/src"
+      ],
+      "@app/contracts/*": [
+        "./libs/contracts/src/*"
+      ]
+    }
   },
   "files": [],
   "references": [
