@@ -1,0 +1,27 @@
+# Dependencias
+node_modules/
+
+# Compilaciones
+dist/
+build/
+coverage/
+
+# Variables privadas
+.env
+.env.*
+!.env.example
+
+# Bases de datos y archivos locales
+*.sqlite
+*.sqlite3
+*.db
+uploads/
+
+# Logs
+*.log
+logs/
+
+# Sistema y editor
+.DS_Store
+.vscode/
+.idea/
