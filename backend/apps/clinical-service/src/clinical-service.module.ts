@@ -3,6 +3,7 @@ import { ConfigModule, ConfigService } from '@nestjs/config';
 import { MongooseModule } from '@nestjs/mongoose';
 
 import { HealthController } from './health.controller';
+import { MedicalRecordsModule } from './medical-records/medical-records.module';
 
 @Module({
   imports: [
@@ -21,6 +22,8 @@ import { HealthController } from './health.controller';
         serverSelectionTimeoutMS: 5000,
       }),
     }),
+
+    MedicalRecordsModule,
   ],
   controllers: [HealthController],
   providers: [],

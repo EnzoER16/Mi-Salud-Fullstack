@@ -4,6 +4,7 @@ export * from './user.types';
 export * from './profiles.types';
 export * from './details.types';
 export * from './emergency-contact.types';
+export * from './medical-record.types';
 
 export const MESSAGE_PATTERNS = {
   IDENTITY_PING: 'identity.ping',
@@ -29,4 +30,7 @@ export const MESSAGE_PATTERNS = {
   IDENTITY_CONTACT_CREATE: 'identity.contact.create',
   IDENTITY_CONTACT_UPDATE: 'identity.contact.update',
   IDENTITY_CONTACT_DELETE: 'identity.contact.delete',
+
+  CLINICAL_RECORD_GET: 'clinical.record.get',
+  CLINICAL_RECORD_SAVE: 'clinical.record.save',
 } as const;

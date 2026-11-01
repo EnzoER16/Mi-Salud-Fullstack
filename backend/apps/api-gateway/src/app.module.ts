@@ -10,6 +10,7 @@ import { AuthModule } from './auth/auth.module';
 import { ProfilesModule } from './profiles/profiles.module';
 import { DetailsModule } from './details/details.module';
 import { EmergencyContactsModule } from './emergency-contacts/emergency-contacts.module';
+import { MedicalRecordsModule } from './medical-records/medical-records.module';
 
 @Module({
   imports: [
@@ -23,6 +24,7 @@ import { EmergencyContactsModule } from './emergency-contacts/emergency-contacts
     ProfilesModule,
     DetailsModule,
     EmergencyContactsModule,
+    MedicalRecordsModule,
   ],
   controllers: [
     AppController,
