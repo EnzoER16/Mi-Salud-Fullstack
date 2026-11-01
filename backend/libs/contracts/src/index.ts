@@ -3,6 +3,7 @@ export * from './contracts.service';
 export * from './user.types';
 export * from './profiles.types';
 export * from './details.types';
+export * from './emergency-contact.types';
 
 export const MESSAGE_PATTERNS = {
   IDENTITY_PING: 'identity.ping',
@@ -23,4 +24,9 @@ export const MESSAGE_PATTERNS = {
 
   IDENTITY_DOCTOR_DETAILS_GET: 'identity.doctor.getDetails',
   IDENTITY_DOCTOR_DETAILS_SAVE: 'identity.doctor.saveDetails',
+
+  IDENTITY_CONTACT_LIST: 'identity.contact.list',
+  IDENTITY_CONTACT_CREATE: 'identity.contact.create',
+  IDENTITY_CONTACT_UPDATE: 'identity.contact.update',
+  IDENTITY_CONTACT_DELETE: 'identity.contact.delete',
 } as const;

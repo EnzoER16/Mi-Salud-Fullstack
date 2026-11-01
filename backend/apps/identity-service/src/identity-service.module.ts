@@ -6,6 +6,7 @@ import { HealthController } from './health.controller';
 import { UsersModule } from './users/users.module';
 import { ProfilesModule } from './profiles/profiles.module';
 import { DetailsModule } from './details/details.module';
+import { EmergencyContactsModule } from './emergency-contacts/emergency-contacts.module';
 
 @Module({
   imports: [
@@ -28,6 +29,7 @@ import { DetailsModule } from './details/details.module';
     UsersModule,
     ProfilesModule,
     DetailsModule,
+    EmergencyContactsModule,
   ],
   controllers: [HealthController],
   providers: [],

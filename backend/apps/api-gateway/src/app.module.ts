@@ -9,6 +9,7 @@ import { InternalClientsModule } from './clients/clients.module';
 import { AuthModule } from './auth/auth.module';
 import { ProfilesModule } from './profiles/profiles.module';
 import { DetailsModule } from './details/details.module';
+import { EmergencyContactsModule } from './emergency-contacts/emergency-contacts.module';
 
 @Module({
   imports: [
@@ -21,6 +22,7 @@ import { DetailsModule } from './details/details.module';
     AuthModule,
     ProfilesModule,
     DetailsModule,
+    EmergencyContactsModule,
   ],
   controllers: [
     AppController,
