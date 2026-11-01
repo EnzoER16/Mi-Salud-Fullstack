@@ -1,33 +1,22 @@
 import { Module } from '@nestjs/common';
-import {
-  ClientsModule,
-  Transport,
-} from '@nestjs/microservices';
+import { ConfigModule } from '@nestjs/config';
 
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { HealthController } from './health.controller';
 
+import { InternalClientsModule } from './clients/clients.module';
+import { AuthModule } from './auth/auth.module';
+
 @Module({
   imports: [
-    ClientsModule.register([
-      {
-        name: 'IDENTITY_CLIENT',
-        transport: Transport.TCP,
-        options: {
-          host: '127.0.0.1',
-          port: 4001,
-        },
-      },
-      {
-        name: 'CLINICAL_CLIENT',
-        transport: Transport.TCP,
-        options: {
-          host: '127.0.0.1',
-          port: 4002,
-        },
-      },
-    ]),
+    ConfigModule.forRoot({
+      isGlobal: true,
+      envFilePath: '.env',
+    }),
+
+    InternalClientsModule,
+    AuthModule,
   ],
   controllers: [
     AppController,
