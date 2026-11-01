@@ -8,6 +8,7 @@ import { HealthController } from './health.controller';
 import { InternalClientsModule } from './clients/clients.module';
 import { AuthModule } from './auth/auth.module';
 import { ProfilesModule } from './profiles/profiles.module';
+import { DetailsModule } from './details/details.module';
 
 @Module({
   imports: [
@@ -19,6 +20,7 @@ import { ProfilesModule } from './profiles/profiles.module';
     InternalClientsModule,
     AuthModule,
     ProfilesModule,
+    DetailsModule,
   ],
   controllers: [
     AppController,
