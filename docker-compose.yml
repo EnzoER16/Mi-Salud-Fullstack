@@ -55,9 +55,9 @@ services:
       - identity-service
       - clinical-service
 
-  frontend-tp:
+  frontend:
     build:
-      context: ./frontend-tp
+      context: ./frontend
     restart: unless-stopped
     environment:
       VITE_API_URL: http://localhost:3000/api

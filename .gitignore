@@ -28,8 +28,8 @@ logs/
 # MiSalud - archivos locales
 _backup_preparar_tp/
 backend/.env
-frontend-tp/node_modules/
-frontend-tp/dist/
+frontend/node_modules/
+frontend/dist/
 backend/coverage/
 # >>> MiSalud+ artefactos locales de trabajo >>>
 /evidencias-tp/
@@ -57,9 +57,9 @@ backend/coverage/
 /backend/.env
 /backend/.env.*
 !/backend/.env.example
-/frontend-tp/.env
-/frontend-tp/.env.*
-!/frontend-tp/.env.example
+/frontend/.env
+/frontend/.env.*
+!/frontend/.env.example
 # Plantillas preliminares desactualizadas; conservar solo el informe actualizado.
 /docs/README-TP-PROPUESTA.md
 /docs/INFORME-FINAL-TP.md

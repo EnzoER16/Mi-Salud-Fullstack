@@ -2,16 +2,14 @@
 
 **Plataforma academica de gestion de salud para pacientes, medicos y familiares autorizados.**
 
-> Proyecto universitario de demostracion. Las cuentas y los registros de ejemplo son ficticios. No esta preparado para atender pacientes reales ni para desplegarse publicamente sin medidas adicionales de seguridad.
-
 ## Equipo
 
-**Integrantes (COMPLETAR ANTES DE ENTREGAR):**
+**Integrantes:**
 
-- Integrante 1: Enzo Rojas
-- Integrante 2: Lautaro Videla
-- Integrante 3: Gustavo Vera
-- Integrante 4: Matías Agüero
+- Enzo Rojas
+- Lautaro Videla
+- Gustavo Vera
+- Matías Agüero
 
 **Materia:** Programacion III. **Entrega:** 03/11/2026.
 
@@ -21,7 +19,7 @@ Turnos, vacunas, antecedentes y medicacion suelen registrarse en lugares diferen
 
 ## Arquitectura y tecnologias
 
-- **React + Vite:** interfaz web responsiva en `frontend-tp/`.
+- **React + Vite:** interfaz web responsiva en `frontend/`.
 - **NestJS API Gateway:** expone REST y GraphQL, valida JWT/roles y publica Swagger.
 - **Identity Service (NestJS TCP):** usuarios, perfiles, datos personales, contactos de emergencia, permisos medicos y grupos de cuidado. Base `misalud_identity`.
 - **Clinical Service (NestJS TCP):** fichas, vacunas, turnos, consultas, tratamientos, tomas, notificaciones, adjuntos GridFS y analisis descriptivo. Base `misalud_clinical`.
@@ -141,8 +139,8 @@ Con la pila Docker iniciada:
 npm --prefix backend run test:unit
 npm --prefix backend run test:e2e
 node --test .\backend\tests\e2e\workflows.test.mjs
-npm --prefix frontend-tp test
-npm --prefix frontend-tp run build
+npm --prefix frontend test
+npm --prefix frontend run build
 ```
 
 Pruebas de alcance ampliado (si se incorpora la carpeta `qa/`):
@@ -180,8 +178,7 @@ backend/
   apps/clinical-service/     Registro clinico, turnos y tratamientos
   scripts/                   Seeds de desarrollo
   tests/                     Pruebas unitarias y E2E
-frontend-tp/                 Aplicacion React actual
-frontend/                    Frontend historico, si sigue conservado
+frontend/                 Aplicacion React actual
 qa/                          Auditorias complementarias (si se incluyen)
 docs/                        Documentacion academica
 docker-compose.yml            Contenedores de desarrollo

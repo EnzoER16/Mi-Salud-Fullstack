@@ -14,7 +14,7 @@ MiSalud+ ofrece una plataforma para pacientes y médicos. Permite registrar usua
 - **Identity Service (NestJS TCP)**: usuarios, registro/login, perfiles y contactos, base MongoDB `misalud_identity`. Puerto TCP 4001 interno.
 - **Clinical Service (NestJS TCP)**: fichas médicas, vacunas y turnos; base MongoDB `misalud_clinical`. Puerto TCP 4002 interno.
 - **MongoDB 8**: una instancia con bases diferenciadas por responsabilidad; volumen persistente de Docker.
-- **React/Vite**: interfaz de demostración `frontend-tp` en el puerto 5173, con vistas protegidas para pacientes.
+- **React/Vite**: interfaz de demostración `frontend` en el puerto 5173, con vistas protegidas para pacientes.
 
 Los microservicios usan `@MessagePattern` y los clientes TCP de NestJS. No se exponen los puertos TCP al navegador: el usuario se comunica solamente con el gateway. El identificador del paciente se obtiene desde el JWT y su perfil en Identity Service; no se confía en identificadores enviados por el navegador para modificar información clínica propia.
 
@@ -34,6 +34,6 @@ Ambos CRUD están en `http://localhost:3000/graphql`; sus datos se guardan en `m
 
 ## Alcance y límites
 
-La nueva interfaz `frontend-tp` cubre autenticación, perfil, ficha, vacunas y turnos; no representa la totalidad de las pantallas de la aplicación Flask original. Los módulos originales de tratamientos, IA, notificaciones, cuidadores y archivos de turnos necesitan migraciones adicionales para ser operativos en NestJS. Los datos de demostración son ficticios. MongoDB se publica sólo en `127.0.0.1` y no tiene autenticación, por lo que la configuración Docker está pensada para uso local académico y no para producción.
+La interfaz `frontend` incluye autenticacion, perfiles, ficha medica, vacunas, turnos, consultas, tratamientos, tomas, notificaciones, autorizaciones y cuidado familiar, ademas de notas y adjuntos. Google OAuth y correo SMTP no estan habilitados en la entrega; Gemini es opcional y requiere consentimiento y configuracion. La instancia MongoDB local no dispone de autenticacion, por lo que Docker Compose esta pensado para desarrollo academico y no para produccion.
 
 **Integrantes:** completar nombres y roles antes de entregar.

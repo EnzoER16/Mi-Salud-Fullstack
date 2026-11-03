@@ -20,7 +20,7 @@ MiSalud+ es una aplicacion web academica que centraliza perfiles, datos de salud
 
 **Clinical Service (NestJS TCP):** fichas medicas, vacunas, turnos, consultas, tratamientos, tomas, notificaciones, adjuntos GridFS y analisis descriptivos. Usa `misalud_clinical`.
 
-**React + Vite:** interfaz en `frontend-tp`, servida en el puerto 5173, con pantallas segun rol. **Docker Compose** inicia la API, los dos microservicios, MongoDB y React con una sola orden.
+**React + Vite:** interfaz en `frontend`, servida en el puerto 5173, con pantallas segun rol. **Docker Compose** inicia la API, los dos microservicios, MongoDB y React con una sola orden.
 
 El navegador solo se conecta con el gateway; la comunicacion interna entre servicios usa TCP. Los permisos sobre datos medicos son validados del lado del servidor, y el acceso mediante DNI o QR requiere autorizacion.
 

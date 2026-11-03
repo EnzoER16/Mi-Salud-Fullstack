@@ -45,7 +45,7 @@ El script crea dos usuarios FICTICIOS e incluye ficha médica, vacuna y turno. L
 cd .\backend
 npm run test:unit
 npm run test:e2e
-cd ..\frontend-tp
+cd ..\frontend
 npm test
 npm run build
 cd ..
