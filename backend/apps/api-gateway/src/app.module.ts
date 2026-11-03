@@ -1,5 +1,8 @@
 import { Module } from '@nestjs/common';
 import { ConfigModule } from '@nestjs/config';
+import { GraphQLModule } from '@nestjs/graphql';
+import { ApolloDriver, ApolloDriverConfig } from '@nestjs/apollo';
+import { Request } from 'express';
 
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
@@ -11,6 +14,7 @@ import { ProfilesModule } from './profiles/profiles.module';
 import { DetailsModule } from './details/details.module';
 import { EmergencyContactsModule } from './emergency-contacts/emergency-contacts.module';
 import { MedicalRecordsModule } from './medical-records/medical-records.module';
+import { GraphqlClinicalModule } from './graphql-clinical/graphql-clinical.module';
 
 @Module({
   imports: [
@@ -25,6 +29,17 @@ import { MedicalRecordsModule } from './medical-records/medical-records.module';
     DetailsModule,
     EmergencyContactsModule,
     MedicalRecordsModule,
+
+    GraphQLModule.forRoot<ApolloDriverConfig>({
+      driver: ApolloDriver,
+      path: '/graphql',
+      autoSchemaFile: true,
+      sortSchema: true,
+      graphiql: process.env.NODE_ENV !== 'production',
+      context: ({ req }: { req: Request }) => ({ req }),
+    }),
+
+    GraphqlClinicalModule,
   ],
   controllers: [
     AppController,

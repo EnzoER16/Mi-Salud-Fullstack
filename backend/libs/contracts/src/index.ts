@@ -5,6 +5,7 @@ export * from './profiles.types';
 export * from './details.types';
 export * from './emergency-contact.types';
 export * from './medical-record.types';
+export * from './clinical-crud.types';
 
 export const MESSAGE_PATTERNS = {
   IDENTITY_PING: 'identity.ping',
@@ -33,4 +34,16 @@ export const MESSAGE_PATTERNS = {
 
   CLINICAL_RECORD_GET: 'clinical.record.get',
   CLINICAL_RECORD_SAVE: 'clinical.record.save',
+
+  CLINICAL_VACCINE_LIST: 'clinical.vaccine.list',
+  CLINICAL_VACCINE_GET: 'clinical.vaccine.get',
+  CLINICAL_VACCINE_CREATE: 'clinical.vaccine.create',
+  CLINICAL_VACCINE_UPDATE: 'clinical.vaccine.update',
+  CLINICAL_VACCINE_DELETE: 'clinical.vaccine.delete',
+
+  CLINICAL_APPOINTMENT_LIST: 'clinical.appointment.list',
+  CLINICAL_APPOINTMENT_GET: 'clinical.appointment.get',
+  CLINICAL_APPOINTMENT_CREATE: 'clinical.appointment.create',
+  CLINICAL_APPOINTMENT_UPDATE: 'clinical.appointment.update',
+  CLINICAL_APPOINTMENT_DELETE: 'clinical.appointment.delete',
 } as const;
