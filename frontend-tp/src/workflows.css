@@ -1,0 +1,25 @@
+/* Ampliación progresiva: estilos propios; no reemplaza el tema MiSalud+ original. */
+.wf-section { margin-bottom: 20px; }
+.wf-section h3 { margin: 0; }
+.wf-inline { display:flex; align-items:end; gap:12px; flex-wrap:wrap; margin: 14px 0; }
+.wf-inline > label, .wf-inline > div { flex:1 1 230px; }
+.wf-list-row { display:flex; align-items:center; justify-content:space-between; gap:18px; padding:16px 0; border-top:1px solid #e7edf0; }
+.wf-list-row > div:first-child { flex:1; min-width:0; }
+.wf-list-row strong { display:block; color:#16364b; margin-bottom:4px; }
+.wf-list-row small { display:block; color:#667d8b; overflow-wrap:anywhere; }
+.wf-actions {display:flex;gap:8px;flex-wrap:wrap;align-items:center;}
+.wf-actions button {white-space:nowrap;}
+.wf-member,.wf-treatment {padding:14px;border:1px solid #e1edf0;border-radius:12px;margin:10px 0;background:#fff;}
+.wf-checks {display:flex;flex-wrap:wrap;gap:15px;margin-top:14px;color:#456677;font-size:14px;}
+.wf-checks input {accent-color:#149b9e;}
+.wf-progress {height:9px;border-radius:99px;background:#e0edf0;margin:12px 0;overflow:hidden;}
+.wf-progress span {height:100%;background:#29b99f;display:block;border-radius:99px;transition:width .3s;}
+.wf-info-grid {display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:12px;margin:15px 0;}
+.wf-info-grid>span {background:#f3f7f9;padding:14px;border-radius:10px;}
+.wf-info-grid strong {display:block;margin-top:6px;}
+.wf-video {display:block;max-width:100%;width:360px;margin:12px 0;border-radius:12px;}
+.wf-json {max-height:360px;overflow:auto;white-space:pre-wrap;overflow-wrap:anywhere;font-size:12px;background:#eef5f7;color:#183e50;border-radius:12px;padding:16px;}
+@media(max-width:650px) {.wf-list-row {align-items:stretch;flex-direction:column}.wf-actions {width:100%}.wf-actions button{flex:1}.wf-checks{flex-direction:column;gap:10px}.wf-section {padding:17px}}
+
+.wf-ai-toggle {display:block;font-size:12px;color:#496574;margin-top:9px;}
+.wf-ai-toggle input {accent-color:#0b90a3;}

@@ -1,3 +1,4 @@
+import { ApiBearerAuth, ApiTags } from '@nestjs/swagger';
 import {
   Body,
   Controller,
@@ -17,6 +18,8 @@ import type { AuthenticatedRequest } from '../auth/guards/jwt-auth.guard';
 import { ProfilesService } from './profiles.service';
 import { DoctorProfileDto } from './dto/doctor-profile.dto';
 
+@ApiTags('Medicos')
+@ApiBearerAuth('JWT-auth')
 @Controller('doctor')
 @UseGuards(JwtAuthGuard, RolesGuard)
 @Roles(UserRole.DOCTOR)

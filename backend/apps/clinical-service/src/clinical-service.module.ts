@@ -1,3 +1,4 @@
+import { WorkflowsModule } from './workflows/workflows.module';
 import { Module } from '@nestjs/common';
 import { ConfigModule, ConfigService } from '@nestjs/config';
 import { MongooseModule } from '@nestjs/mongoose';
@@ -9,6 +10,7 @@ import { AppointmentsModule } from './appointments/appointments.module';
 
 @Module({
   imports: [
+    WorkflowsModule,
     ConfigModule.forRoot({
       isGlobal: true,
       envFilePath: '.env',

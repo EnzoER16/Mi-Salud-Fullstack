@@ -25,3 +25,43 @@ logs/
 .DS_Store
 .vscode/
 .idea/
+# MiSalud - archivos locales
+_backup_preparar_tp/
+backend/.env
+frontend-tp/node_modules/
+frontend-tp/dist/
+backend/coverage/
+# >>> MiSalud+ artefactos locales de trabajo >>>
+/evidencias-tp/
+/misalud_paquete/
+/misalud_verificacion/
+/misalud_frontend_v2/
+/misalud_instalador_seguro/
+/misalud_entrega_final/
+/misalud_cierre/
+/misalud_ampliacion/
+/misalud_seed_realista/
+/misalud_revision_ampliacion/
+/misalud_pruebas_escritura/
+/misalud_cierre_repo/
+/PRUEBAS-Y-ACCION.txt
+/misalud_*.zip
+/MiSalud_*.zip
+/_backup_preparar_tp/
+*.backup-*
+*.bak
+**/node_modules/
+**/dist/
+**/coverage/
+**/.vite/
+/backend/.env
+/backend/.env.*
+!/backend/.env.example
+/frontend-tp/.env
+/frontend-tp/.env.*
+!/frontend-tp/.env.example
+# Plantillas preliminares desactualizadas; conservar solo el informe actualizado.
+/docs/README-TP-PROPUESTA.md
+/docs/INFORME-FINAL-TP.md
+/docs/CHECKLIST-VISUAL-Y-ENTREGA.md
+# <<< MiSalud+ artefactos locales de trabajo <<<

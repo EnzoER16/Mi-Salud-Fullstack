@@ -1,3 +1,4 @@
+import { ApiBearerAuth, ApiTags } from '@nestjs/swagger';
 import {
   Body,
   Controller,
@@ -23,6 +24,8 @@ import { EmergencyContactsService } from './emergency-contacts.service';
 import { CreateEmergencyContactDto } from './dto/create-emergency-contact.dto';
 import { UpdateEmergencyContactDto } from './dto/update-emergency-contact.dto';
 
+@ApiTags('Contactos de emergencia')
+@ApiBearerAuth('JWT-auth')
 @Controller('patient/emergency-contacts')
 @UseGuards(JwtAuthGuard, RolesGuard)
 @Roles(UserRole.PATIENT)

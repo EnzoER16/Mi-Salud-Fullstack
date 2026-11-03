@@ -18,7 +18,8 @@
     "test:watch": "node --experimental-vm-modules ./node_modules/jest/bin/jest.js --watch",
     "test:cov": "node --experimental-vm-modules ./node_modules/jest/bin/jest.js --coverage",
     "test:debug": "node --inspect-brk --experimental-vm-modules -r tsconfig-paths/register -r ts-node/register node_modules/.bin/jest --runInBand",
-    "test:e2e": "node --experimental-vm-modules ./node_modules/jest/bin/jest.js --projects \"./apps/api-gateway/test/jest-e2e.json\" \"./apps/identity-service/test/jest-e2e.json\" \"./apps/clinical-service/test/jest-e2e.json\""
+    "test:e2e": "node --test tests/e2e/auth.test.mjs tests/e2e/graphql.test.mjs",
+    "test:unit": "vitest run -c vitest.config.mts"
   },
   "dependencies": {
     "@apollo/server": "^5.5.1",
@@ -32,6 +33,7 @@
     "@nestjs/microservices": "^12.3.2",
     "@nestjs/mongoose": "^12.0.0",
     "@nestjs/platform-express": "^12.0.1",
+    "@nestjs/swagger": "^12.1.0",
     "bcrypt": "^6.0.0",
     "class-transformer": "^0.5.1",
     "class-validator": "^0.15.1",
@@ -64,6 +66,7 @@
     "tsconfig-paths": "^4.2.0",
     "tsconfig-paths-webpack-plugin": "^4.2.0",
     "typescript": "^6.0.2",
+    "vitest": "^3.2.7",
     "webpack-node-externals": "^3.0.0"
   }
 }

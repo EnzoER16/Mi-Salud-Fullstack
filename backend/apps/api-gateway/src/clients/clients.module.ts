@@ -11,7 +11,7 @@ import {
         name: 'IDENTITY_CLIENT',
         transport: Transport.TCP,
         options: {
-          host: '127.0.0.1',
+          host: process.env.IDENTITY_HOST ?? '127.0.0.1',
           port: 4001,
         },
       },
@@ -19,7 +19,7 @@ import {
         name: 'CLINICAL_CLIENT',
         transport: Transport.TCP,
         options: {
-          host: '127.0.0.1',
+          host: process.env.CLINICAL_HOST ?? '127.0.0.1',
           port: 4002,
         },
       },

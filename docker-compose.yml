@@ -2,24 +2,70 @@ services:
   mongo:
     image: mongo:8
     restart: unless-stopped
-
     ports:
       - "127.0.0.1:27018:27017"
-
     volumes:
       - mongo_data:/data/db
-
     healthcheck:
-      test:
-        - CMD
-        - mongosh
-        - --quiet
-        - --eval
-        - "db.adminCommand('ping').ok"
+      test: ["CMD", "mongosh", "--quiet", "--eval", "db.adminCommand('ping').ok"]
       interval: 10s
       timeout: 5s
       retries: 10
       start_period: 15s
+
+  identity-service:
+    build:
+      context: ./backend
+    restart: unless-stopped
+    env_file: ./backend/.env
+    environment:
+      SERVICE_NAME: identity-service
+      MS_HOST: 0.0.0.0
+      MONGO_IDENTITY_URI: mongodb://mongo:27017/misalud_identity
+    depends_on:
+      mongo:
+        condition: service_healthy
+
+  clinical-service:
+    build:
+      context: ./backend
+    restart: unless-stopped
+    env_file: ./backend/.env
+    environment:
+      SERVICE_NAME: clinical-service
+      MS_HOST: 0.0.0.0
+      MONGO_CLINICAL_URI: mongodb://mongo:27017/misalud_clinical
+    depends_on:
+      mongo:
+        condition: service_healthy
+
+  api-gateway:
+    build:
+      context: ./backend
+    restart: unless-stopped
+    env_file: ./backend/.env
+    environment:
+      SERVICE_NAME: api-gateway
+      PORT: 3000
+      IDENTITY_HOST: identity-service
+      CLINICAL_HOST: clinical-service
+    ports:
+      - "127.0.0.1:3000:3000"
+    depends_on:
+      - identity-service
+      - clinical-service
+
+  frontend-tp:
+    build:
+      context: ./frontend-tp
+    restart: unless-stopped
+    environment:
+      VITE_API_URL: http://localhost:3000/api
+      VITE_GRAPHQL_URL: http://localhost:3000/graphql
+    ports:
+      - "127.0.0.1:5173:5173"
+    depends_on:
+      - api-gateway
 
 volumes:
   mongo_data:

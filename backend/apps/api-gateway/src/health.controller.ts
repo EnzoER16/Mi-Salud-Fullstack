@@ -1,3 +1,4 @@
+import { ApiTags } from '@nestjs/swagger';
 
 import {
   Controller,
@@ -16,6 +17,7 @@ interface HealthResponse {
   message: string;
 }
 
+@ApiTags('Sistema')
 @Controller('health')
 export class HealthController {
   constructor(

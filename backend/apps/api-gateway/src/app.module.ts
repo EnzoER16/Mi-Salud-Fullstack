@@ -1,3 +1,4 @@
+import { WorkflowsModule } from './workflows/workflows.module';
 import { Module } from '@nestjs/common';
 import { ConfigModule } from '@nestjs/config';
 import { GraphQLModule } from '@nestjs/graphql';
@@ -18,6 +19,7 @@ import { GraphqlClinicalModule } from './graphql-clinical/graphql-clinical.modul
 
 @Module({
   imports: [
+    WorkflowsModule,
     ConfigModule.forRoot({
       isGlobal: true,
       envFilePath: '.env',

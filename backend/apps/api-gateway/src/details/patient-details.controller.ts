@@ -1,3 +1,4 @@
+import { ApiBearerAuth, ApiTags } from '@nestjs/swagger';
 import {
   Body,
   Controller,
@@ -18,6 +19,8 @@ import { Roles } from '../auth/decorators/roles.decorator';
 import { DetailsService } from './details.service';
 import { PatientDetailsDto } from './dto/patient-details.dto';
 
+@ApiTags('Datos personales')
+@ApiBearerAuth('JWT-auth')
 @Controller('patient')
 @UseGuards(JwtAuthGuard, RolesGuard)
 @Roles(UserRole.PATIENT)

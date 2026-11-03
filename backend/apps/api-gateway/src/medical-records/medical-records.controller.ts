@@ -1,3 +1,4 @@
+import { ApiBearerAuth, ApiTags } from '@nestjs/swagger';
 import {
   Body,
   Controller,
@@ -18,6 +19,8 @@ import { Roles } from '../auth/decorators/roles.decorator';
 import { MedicalRecordsService } from './medical-records.service';
 import { SaveMedicalRecordDto } from './dto/save-medical-record.dto';
 
+@ApiTags('Ficha medica')
+@ApiBearerAuth('JWT-auth')
 @Controller('medical-record')
 @UseGuards(JwtAuthGuard, RolesGuard)
 @Roles(UserRole.PATIENT)

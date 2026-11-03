@@ -1,3 +1,4 @@
+import { SharingModule } from './sharing/sharing.module';
 import { Module } from '@nestjs/common';
 import { ConfigModule, ConfigService } from '@nestjs/config';
 import { MongooseModule } from '@nestjs/mongoose';
@@ -10,6 +11,7 @@ import { EmergencyContactsModule } from './emergency-contacts/emergency-contacts
 
 @Module({
   imports: [
+    SharingModule,
     ConfigModule.forRoot({
       isGlobal: true,
       envFilePath: '.env',

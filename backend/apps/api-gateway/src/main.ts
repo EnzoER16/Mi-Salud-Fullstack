@@ -1,3 +1,4 @@
+import { setupSwagger } from './swagger/setup-swagger';
 import { NestFactory } from '@nestjs/core';
 import { ValidationPipe } from '@nestjs/common';
 import { AppModule } from './app.module';
@@ -19,7 +20,9 @@ async function bootstrap() {
     }),
   );
 
-  await app.listen(3000);
+  setupSwagger(app);
+
+  await app.listen(Number(process.env.PORT ?? 3000), '0.0.0.0');
 
   console.log(
     'API Gateway disponible en http://localhost:3000',
